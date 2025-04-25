@@ -1,0 +1,27 @@
+{
+  "name": "ai",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "npm run build & node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Konrad Schewe",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/generative-ai": "0.24.0",
+    "@langchain/community": "0.3.41",
+    "@langchain/core": "0.3.48",
+    "chromadb": "2.3.0",
+    "commander": "13.1.0",
+    "figlet": "1.8.1",
+    "inquirer": "12.6.0"
+  },
+  "devDependencies": {
+    "@types/figlet": "1.7.0",
+    "@types/node": "22.15.2",
+    "typescript": "5.8.3"
+  }
+}
