@@ -1,3 +1,3 @@
-import { Task } from './task';
+import { Plan } from './plan';
 
-export type PlannerModelResponse = Task[];
+export type PlannerModelResponse = Plan;

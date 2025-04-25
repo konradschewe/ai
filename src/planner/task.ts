@@ -3,11 +3,13 @@ export enum TaskType {
   DELETE_DIR = 'delete-dir',
   WRITE_FILE = 'create-file',
   DELETE_FILE = 'delete-file',
+  EXEC_CMD = 'exec-cmd',
 }
 
 export type TaskParams = {
   path: string;
-  content?: string;
+  fileContent?: string;
+  command?: string;
 };
 
 export type Task = {

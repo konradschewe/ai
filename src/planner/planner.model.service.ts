@@ -16,9 +16,10 @@ export class PlannerModelService extends GeminiModelService {
   });
 
   async plan(requirements: string): Promise<PlannerModelResponse> {
-    const prompt =
+    let prompt =
       'Please plan the necessary steps to fulfill the requirements: ' +
       requirements;
+    prompt += '\n\n' + 'Ask any clarifying inquerying questions if needed.';
     const response = await this.generate(prompt);
     return response as PlannerModelResponse;
   }

@@ -1,9 +1,7 @@
-import { input } from '@inquirer/prompts';
 import { Command } from 'commander';
 import dotenv from 'dotenv';
 import figlet from 'figlet';
-import { Action } from './actor/action';
-import { plannerModelService } from './planner/planner.model.service';
+import { Agent } from './agent';
 
 dotenv.config();
 
@@ -19,16 +17,5 @@ program
 
 // const options = program.opts();
 // console.log('Options:', options);
-const run = async () => {
-  const request = await input({
-    message: 'How can I help you?',
-  });
-
-  const tasks = await plannerModelService.plan(request);
-  for (const task of tasks) {
-    const action = new Action(task);
-    await action.execute();
-  }
-};
-
-void run();
+const agent = new Agent();
+void agent.run();
