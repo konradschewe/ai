@@ -1,9 +1,16 @@
 import { input } from '@inquirer/prompts';
 import { Action } from './action/action';
+import { Memory } from './memory/memory';
 import { plannerModelService } from './planner/planner.model.service';
 import { Task } from './planner/task';
 
 export class Agent {
+  private memory = new Memory();
+
+  async init() {
+    await this.memory.init();
+  }
+
   async run() {
     const request = await input({
       message: 'How can I help you?',
